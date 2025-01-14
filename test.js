@@ -32,21 +32,29 @@ async function loadFaceAPIModels() {
 
 // Access the user's webcam
 async function setupCamera() {
-    const video = document.createElement("video"); // Create a hidden video element
-    video.autoplay = true;
-    video.muted = true;
-    video.playsInline = true;
+    try {
+        const video = document.createElement("video"); // Create a hidden video element
+        video.autoplay = true;
+        video.muted = true;
+        video.playsInline = true;
 
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-    video.srcObject = stream;
+        // Request webcam access
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
 
-    return new Promise((resolve) => {
-        video.onloadedmetadata = () => {
-            video.play();
-            resolve(video);
-        };
-    });
+        return new Promise((resolve) => {
+            video.onloadedmetadata = () => {
+                video.play();
+                resolve(video);
+            };
+        });
+    } catch (err) {
+        console.error("Error accessing camera:", err);
+        alert("Unable to access the camera. Please check permissions and try again.");
+        return null;
+    }
 }
+
 function preprocessFrame(videoElement) {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d", { willReadFrequently: true });
