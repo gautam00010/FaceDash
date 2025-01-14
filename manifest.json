@@ -5,6 +5,10 @@
     "display": "standalone",
     "background_color": "#ffffff",
     "description": "A face-detection game built with Babylon.js and face-api.js",
+    "permissions": {
+      "camera": true
+      },
+
     "icons": [
       {
         "src": "assets/car.png",
