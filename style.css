@@ -1,0 +1,205 @@
+/* General Page Styling */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'MyCustomFont', Arial, sans-serif; /* Use custom font */
+    position: relative;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('assets/Chlub-3zaZ.ttf') format('truetype');
+}
+/* Fullscreen Canvas for the Game */
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Shared Menu Styling */
+
+#mainMenu, #garageMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Set explicit dimensions */
+    height: 100%; /* Auto height for content */
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('assets/backgroundcar.jpg'); /* Background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Shared Menu Styling */
+
+#gameOverMenu,#pauseMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Set explicit dimensions */
+    height: 100%; /* Auto height for content */
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Menu Buttons Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+/* Menu Buttons */
+button {
+    margin: 15px; /* Remove extra margins */
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Garage-Specific Elements */
+.garage-car {
+    margin: 15px auto;
+    width: 200px;
+    background: #333; /* Dark background for car options */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.garage-car:hover {
+    transform: scale(1.1);
+    background: #444; /* Slightly lighter background on hover */
+}
+
+.garage-car.selected {
+    color: #0f0; /* Highlight selected car in green */
+    font-weight: bold;
+}
+
+/* Back Button for Garage Menu */
+#backToMenu {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #007BFF; /* Blue background */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#backToMenu:hover {
+    transform: scale(1.1);
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Pause Button Styling */
+#pauseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Score Display */
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    z-index: 1000;
+}
+
+/* Notification Styling */
+.unlock-notification {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/* Main Menu Styling */
+#mainMenu,#garageMenu h1 {
+    font-size: 5rem; /* Increases the title size */
+    color: rgb(0, 0, 0);
+}
+
+#mainMenu p {
+    font-size: 3rem; /* Increases paragraph text size */
+    color: rgb(255, 255, 255);
+}
+
+/* Apply similar changes for other menus */
+#pauseMenu h2, #gameOverMenu h2 {
+    font-size: 5rem;
+}
+
+ p {
+    font-size: 2rem; /* Increase HUD score size */
+}

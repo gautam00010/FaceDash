@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Controlled Car Game</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Babylon.js and Dependencies -->
+    <script src="babylon.js"></script>
+    <script src="babylonjs.loaders.min.js"></script>
+    <script src="face-api.min.js"></script>
+
+    <!-- Game Script -->
+    <script src="test.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('Service Worker Registered'))
+                .catch((err) => console.log('Service Worker Registration Failed:', err));
+        }
+    </script>
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:,">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+    <!-- Game Canvas -->
+    <canvas id="renderCanvas"></canvas>
+
+    <!-- Video Element (Hidden) -->
+    <video id="video" style="display: none;" autoplay muted playsinline></video>
+
+    <!-- Main Menu -->
+    <div id="mainMenu">
+        <h1>Face Dash</h1>
+        <div class="face-image"></div>
+        <div class="button-container">
+            <button id="playButton">Play</button>
+            <button id="garageButton">Garage</button>
+        </div>
+        
+        <p id="highScore">Score 0</p>
+    </div>
+    <!-- Selected Car Display on Home Screen -->
+    <div id="carDisplay" style="width: 300px; height: 200px; margin: auto;"></div>
+
+    <!-- Pause Menu -->
+    <div id="pauseMenu" style="display: none;">
+        <h2>Paused</h2>
+        <button id="resumeButton">Resume</button>
+        <button id="homeButtonPause">Home</button>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverMenu" style="display: none;">
+        <h2>Game Over</h2>
+        <p id="finalScore">Score 0</p>
+        <button id="restartButton">Restart</button>
+        <button id="homeButtonGameOver">Home</button>
+    </div>
+
+    <!-- In-Game HUD -->
+    <div id="hud" style="display: none;">
+        <button id="pauseButton">II</button>
+        <p id="score">Score 0</p>
+    </div>
+
+    <!-- Garage System -->
+    <div id="garageMenu" style="display: none;">
+
+        <h1>Garage</h1>
+        <button id="homeButtonGarage">Home</button>
+
+        <div id="carList">
+            <!-- Cars will be dynamically loaded here -->
+        </div>
+    </div>
+</body>
+</html>
