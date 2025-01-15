@@ -24,9 +24,9 @@ let previousFacePosition = { x: 0, y: 0 }; // Track previous face position for s
 
 // Load face-api.js models
 async function loadFaceAPIModels() {
-    await faceapi.nets.tinyFaceDetector.loadFromUri('https://gautam00010.github.io/models'); // Load Tiny Face Detector model
-    await faceapi.nets.ssdMobilenetv1.loadFromUri('https://gautam00010.github.io/models'); // Load SSD MobileNet model
-    await faceapi.nets.faceLandmark68Net.loadFromUri('https://gautam00010.github.io/models'); // Load Face Landmark model
+    await faceapi.nets.tinyFaceDetector.loadFromUri('https://gautam00010.github.io/FaceDash/models'); // Load Tiny Face Detector model
+    await faceapi.nets.ssdMobilenetv1.loadFromUri('https://gautam00010.github.io/FaceDash/models'); // Load SSD MobileNet model
+    await faceapi.nets.faceLandmark68Net.loadFromUri('https://gautam00010.github.io/FaceDash/models'); // Load Face Landmark model
     console.log("FaceAPI models loaded successfully.");
 }
 
