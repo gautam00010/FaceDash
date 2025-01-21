@@ -1,0 +1,22 @@
+{
+  "name": "carface",
+  "version": "1.0.0",
+  "main": "face-api.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babylonjs/core": "^7.38.0",
+    "@babylonjs/inspector": "^7.38.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "babylonjs": "^7.38.0",
+    "babylonjs-loaders": "^7.38.0"
+  }
+}
