@@ -6,7 +6,7 @@ self.addEventListener('install', function(event) {
           '/index.html',
           '/style.css',
           '/test.js',
-          'babylon.js.map',
+          'babylon.js',
           'babylonjs.loaders.min.js',
           'face-api.min.js',
           'assets/Textures/colormap.png',
