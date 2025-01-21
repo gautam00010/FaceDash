@@ -40,7 +40,9 @@ self.addEventListener('install', function(event) {
           'models/ssd_mobilenetv1_model-shard2',
           'models/ssd_mobilenetv1_model-weights_manifest.json',
           'models/tiny_face_detector_model-shard1',
-          'models/tiny_face_detector_model-weights_manifest.json'
+          'models/tiny_face_detector_model-weights_manifest.json',
+          'package.json',
+            'package-lock.json'
         ]);
       })
     );
