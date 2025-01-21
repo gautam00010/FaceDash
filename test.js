@@ -161,7 +161,7 @@ async function startGame() {
     showMenu('hud'); // Show HUD for gameplay
     await initFaceDetection();
     createScene();
-    obstacleArray = [];
+    obstacles = [];
     startDifficultyIncrease();
     resetDifficulty();
     checkCarUnlocks(); // Check for new car unlocks
